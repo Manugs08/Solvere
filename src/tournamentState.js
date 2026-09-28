@@ -5,7 +5,7 @@ export function emptyEdition(tournament) {
   return {
     data: {
       teams: [], players: [], staff: [], cities: [], stadiums: [], referees: [],
-      groups: grouped ? Array.from({ length: Number(tournament.count) / Number(tournament.groupCapacity || 4) }, (_, i) => ({ id: `${tournament.id}-g${i}`, name: String.fromCharCode(65 + i) })) : [],
+      groups: [],
       phases: grouped ? [{ id: `${tournament.id}-phase`, name: 'Fase de grupos', type: 'Grupos', rule: 'Primeros 2 de cada grupo', count: '0' }] : [{ id: `${tournament.id}-phase`, name: 'Final', type: 'Eliminación directa', rule: 'Ganador del partido', count: '1' }],
     },
     matches: [], tickets: [], notifications: [],
