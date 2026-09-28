@@ -15,7 +15,7 @@ export const teams = [
 ]
 export const initialData = {
   teams,
-  tournaments: [{ id: 't1', name: 'Copa Mundial 2026', year: '2026', count: '12', format: 'Grupos y eliminación directa' }],
+  tournaments: [{ id: 't1', name: 'Copa Mundial 2026', year: '2026', count: '12', groupCapacity: '4', format: 'Grupos y eliminación directa' }],
   phases: [{ id: 'f1', name: 'Fase de grupos', type: 'Grupos', rule: 'Primeros 2 de cada grupo', count: '18' }, { id: 'f2', name: 'Cuartos de final', type: 'Eliminación directa', rule: 'Primeros 2 de cada grupo y los 2 mejores terceros', count: '4' }, { id: 'f4', name: 'Semifinal', type: 'Eliminación directa', rule: 'Ganador del partido', count: '2' }, { id: 'f3', name: 'Final', type: 'Eliminación directa', rule: 'Ganador del partido', count: '1' }],
   groups: [{ id: 'g1', name: 'A' }, { id: 'g2', name: 'B' }, { id: 'g3', name: 'C' }],
   cities: [{ id: 'c1', name: 'Ciudad de México', country: 'México', location: 'Zona central' }, { id: 'c2', name: 'Miami', country: 'Estados Unidos', location: 'Florida' }, { id: 'c3', name: 'Toronto', country: 'Canadá', location: 'Ontario' }],

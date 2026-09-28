@@ -5,7 +5,7 @@ export function emptyEdition(tournament) {
   return {
     data: {
       teams: [], players: [], staff: [], cities: [], stadiums: [], referees: [],
-      groups: grouped ? Array.from({ length: Math.ceil(Number(tournament.count) / 4) }, (_, i) => ({ id: `${tournament.id}-g${i}`, name: String.fromCharCode(65 + i) })) : [],
+      groups: grouped ? Array.from({ length: Number(tournament.count) / Number(tournament.groupCapacity || 4) }, (_, i) => ({ id: `${tournament.id}-g${i}`, name: String.fromCharCode(65 + i) })) : [],
       phases: grouped ? [{ id: `${tournament.id}-phase`, name: 'Fase de grupos', type: 'Grupos', rule: 'Primeros 2 de cada grupo', count: '0' }] : [{ id: `${tournament.id}-phase`, name: 'Final', type: 'Eliminación directa', rule: 'Ganador del partido', count: '1' }],
     },
     matches: [], tickets: [], notifications: [],
@@ -14,6 +14,7 @@ export function emptyEdition(tournament) {
 
 export function initialTournamentState() {
   const { tournaments, users, ...data } = structuredClone(initialData)
+  data.staff = data.teams.map(t => ({ id: `coach-${t.id}`, teamId: t.id, name: t.coach, team: t.name, position: 'Director técnico' }))
   return { activeId: tournaments[0].id, tournaments, users, editions: {
     [tournaments[0].id]: { data, matches: structuredClone(initialMatches), tickets: [], notifications: [] },
   } }

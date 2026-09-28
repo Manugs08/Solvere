@@ -6,7 +6,7 @@
 .group-panel { min-width:0; }
 .group-actions { padding:15px; display:flex; justify-content:space-between; gap:10px; }
 .group-empty { padding:20px; }
-[data-theme='dark'] .tournament-picker { background:#242337; border-color:#3b3554; }
+[data-theme='dark'] .tournament-picker { background:#172b40; border-color:#2b4965; }
 [data-theme='dark'] .tournament-picker small { color:#b9b8cc; }
 .flag-ESP { background:linear-gradient(#b84046 25%,#eacb55 25% 75%,#b84046 75%); }
 .flag-GER { background:linear-gradient(#343746 33%,#b94c58 33% 66%,#e3bb57 66%); }
