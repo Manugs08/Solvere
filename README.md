@@ -45,7 +45,7 @@ El selector de perfiles es un atajo de demostración: no implementa seguridad re
 
 Todo es una simulación en el navegador. Al recargar se reinicia la información. No hay servidor, base de datos, envío de correos, pasarela de pago ni lector de códigos. Los códigos de barras son decorativos y los tickets no tienen validez real.
 
-Se usa un único conjunto de datos para la edición de muestra; el formulario de ediciones ilustra su gestión, sin aislar varias competencias. Hay 40 asientos por sector en el plano simplificado y un cupo global por partido. No se modelan reservas concurrentes ni vencimientos. La clasificación permanece provisional: no se implementan todos los desempates ni la generación automática de cruces. Los eventos y el resultado se cargan por separado. Los filtros estadísticos iniciales son por grupo.
+El selector permite administrar varias competencias con selecciones, jugadores, partidos y entradas independientes durante la sesión. La edición inicial incluye 12 selecciones, 25 jugadores y tablas para los tres grupos. Los jugadores tienen peso, fecha de nacimiento y altura. Hay 40 asientos por sector en el plano simplificado y un cupo global por partido. No se modelan reservas concurrentes ni vencimientos. La clasificación permanece provisional: no se implementan todos los desempates ni la generación automática de cruces. Los eventos y el resultado se cargan por separado. Los filtros estadísticos iniciales son por grupo.
 
 Los requisitos no funcionales de disponibilidad, seguridad, concurrencia, auditoría y respaldo corresponden a una futura aplicación real. Los códigos RF se interpretaron según el cuerpo de la V.3, porque difieren de su índice.
 
