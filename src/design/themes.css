@@ -1,0 +1,74 @@
+/* Theme-specific surfaces; the existing layout is shared by both modes. */
+:root { color-scheme: light; }
+.fifa-brand { flex-direction: column; align-items: flex-start; gap: 0; }
+.fifa-brand img { display: block; width: 112px; height: auto; }
+.fifa-brand small { margin-top: 10px; letter-spacing: 1.4px; font-size: 7px; }
+.theme-toggle { border: 1px solid #e5e1ec; background: #f7f4fc; color: #6b4ce6; flex-shrink: 0; }
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  background: #10121c;
+  color: #ececf5;
+  --ink: #ececf5;
+  --purple: #b39aff;
+  --line: #303346;
+}
+[data-theme='dark'] :is(.sidebar,.topbar,.panel,.stat,.quick-panel,.ticket-card,.purchase-card,.match-row,dialog) { background: #1a1d2b; color: #ececf5; border-color: #303346; }
+[data-theme='dark'] :is(h1,h2,h3,td strong,.quick-links strong,.sidebar-user strong,.tournament-selector strong) { color: #ececf5; }
+[data-theme='dark'] :is(p,.muted,.stat-top,.stat>small,.field,.details dt,.match-venue,.match-date small,.match-venue small,.breadcrumb,.role-switch,.workspace-label,.nav-label,.eyebrow,.sidebar-user small,.tournament-selector small,.brand small,.quick-links small,.team-card-bottom,.panel-foot,footer,.purchase-bottom>span,.ticket-card>small,.ticket-seat span,.ticket-top>span:first-child,.info-strip) { color: #aeb0c6; }
+[data-theme='dark'] :is(.breadcrumb strong,.details dd,td,.row-actions button,.match-teams>b,.list-row>span:last-child) { color: #c9c7de; }
+[data-theme='dark'] :is(.tournament-selector,.demo-note,.tabs,.match-detail,.seat-map,.role-switch select,.quick-icon,.large-icon,.theme-toggle) { background: #242337; border-color: #3b3554; color: #c2adff; }
+[data-theme='dark'] .fifa-brand img { filter: brightness(0) invert(1); }
+[data-theme='dark'] nav button { color: #b9b8cc; }
+[data-theme='dark'] nav button.active { background: #34304e; color: #d1bdff; }
+[data-theme='dark'] nav button small { background: #3d3757; color: #d8c9ff; }
+[data-theme='dark'] :is(input,select) { background: #141724; color: #ececf5; border-color: #424457; }
+[data-theme='dark'] input::placeholder { color: #9699b2; }
+[data-theme='dark'] .search input { background: transparent; }
+[data-theme='dark'] .secondary { background: #252838; color: #d7d4e7; border-color: #444559; }
+[data-theme='dark'] .primary { background: #8060df; color: #fff; }
+[data-theme='dark'] .danger { background: #b74056; color: #fff; }
+[data-theme='dark'] .tabs button { color: #aaa9c2; }
+[data-theme='dark'] .tabs button.active { background: #3b3355; color: #e0d1ff; }
+[data-theme='dark'] .page-tabs { border-color: #303346; }
+[data-theme='dark'] .page-tabs button { color: #b3afc9; }
+[data-theme='dark'] .page-tabs button.active { color: #c9b4ff; }
+[data-theme='dark'] :is(th,.notification-row.unread) { background: #202334; color: #b5b4cf; }
+[data-theme='dark'] :is(th,td,.match-row,.team-card,.ticket-seat,.team-card-bottom) { border-color: #303346; }
+[data-theme='dark'] .badge { background: #35304c; color: #d2baff; }
+[data-theme='dark'] :is(.badge.green,.success-icon) { background: #203d35; color: #9ddbb9; }
+[data-theme='dark'] .badge.gray { background: #303243; color: #c1bdd2; }
+[data-theme='dark'] :is(.stat-icon,.cup-icon,.position.qualified) { background: #352d4e; color: #c3a6fa; }
+[data-theme='dark'] .stat-icon.blue { background: #24364c; color: #96bdea; }
+[data-theme='dark'] .stat-icon.orange { background: #443626; color: #e7be84; }
+[data-theme='dark'] .stat-icon.green { background: #233c35; color: #97cfb4; }
+[data-theme='dark'] .avatar { background: #40352e; color: #dfc1a7; }
+[data-theme='dark'] .editorial-card { background: #28243d; border-color: #39314f; }
+[data-theme='dark'] .editorial-card h2 { color: #e0d3f1; }
+[data-theme='dark'] .editorial-card p { color: #b7a7c9; }
+[data-theme='dark'] .stadium-sketch div { border-color: #655079; }
+[data-theme='dark'] .notice { background: #2e2842; color: #d0bce6; border-color: #4a3b61; }
+[data-theme='dark'] .error { background: #422830; color: #ffb2be; border-color: #734151; }
+[data-theme='dark'] .empty { color: #a79cbe; }
+[data-theme='dark'] .empty h3 { color: #d9cde9; }
+[data-theme='dark'] .mini-pitch { background: #243e35; border-color: #3e6254; color: #b1d1c2; }
+[data-theme='dark'] .seats button { background: #332e47; border-color: #514369; color: #d4c0ec; }
+[data-theme='dark'] .seats button.chosen { background: #8965e6; color: #fff; border-color: #c9b4ff; }
+[data-theme='dark'] .seats button:disabled { background: #393b48; color: #9a9aab; border-color: #424554; }
+[data-theme='dark'] :is(.purchase-summary,.steps>span) { color: #bab0cb; }
+[data-theme='dark'] .steps b { background: #303043; }
+[data-theme='dark'] .steps .active { color: #cbb4ff; }
+[data-theme='dark'] .steps .active b { background: #43335f; }
+[data-theme='dark'] :is(.ticket-seat strong,.purchase-bottom strong) { color: #ddc7f3; }
+[data-theme='dark'] .barcode { filter: brightness(2); }
+[data-theme='dark'] .match-detail span:not(.badge):not(.flag) { color: #bcb0cf; }
+[data-theme='dark'] .toast { background: #383048; border-color: #6a5986; }
+[data-theme='dark'] dialog::backdrop { background: #050711bb; }
+/* Keep the action reachable beside the profile selector on narrow screens. */
+@media(max-width:420px) {
+  .topbar { padding-inline: 10px; gap: 5px; }
+  .topbar-actions { gap: 3px; }
+  .breadcrumb { gap: 5px; min-width: 0; }
+  .breadcrumb strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .role-switch select { width: 100px; }
+  .theme-toggle { width: 30px; height: 32px; }
+}
