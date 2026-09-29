@@ -1,0 +1,74 @@
+<!-- Pegar este HTML en EmailJS: Email Templates > (tu template) > Code editor -->
+<!-- Variables usadas: to_name, to_email, order_code, match_name, match_date, match_time, stadium, sector, seats, quantity, unit_price, total_price -->
+<div style="background:#f7f8fb;padding:32px 16px;font-family:'DM Sans',Arial,sans-serif;color:#242536;">
+  <div style="max-width:520px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(37,23,56,0.12);">
+
+    <!-- Header estilo "hero" -->
+    <div style="background:#251e4e;padding:30px 32px;text-align:center;">
+      <div style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:700;font-size:26px;letter-spacing:2px;color:#ffffff;">FIFA</div>
+      <div style="margin-top:6px;font-size:9px;letter-spacing:3px;color:#b9b0d7;text-transform:uppercase;">Mundial Tickets</div>
+    </div>
+
+    <!-- Contenido -->
+    <div style="padding:30px 32px 0;">
+      <span style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:#eff8f2;color:#599c79;border-radius:5px;font-size:11px;font-weight:600;">✓ Compra confirmada</span>
+      <h2 style="font-family:'Manrope',Arial,sans-serif;font-size:23px;letter-spacing:-0.6px;font-weight:800;color:#252437;margin:14px 0 4px;">¡Gracias por tu compra, {{to_name}}!</h2>
+      <p style="font-size:13px;line-height:1.65;color:#838391;margin:0 0 22px;">Ya tenés tus entradas para la Copa Mundial. Te dejamos el detalle de tu orden a continuación.</p>
+    </div>
+
+    <!-- Tarjeta de partido -->
+    <div style="margin:0 32px;padding:22px;background:#faf8fd;border-radius:12px;text-align:center;">
+      <p style="font-size:9px;letter-spacing:1.5px;color:#ad97bc;text-transform:uppercase;margin:0 0 8px;">Partido</p>
+      <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:17px;font-weight:700;color:#252437;margin:0 0 6px;">{{match_name}}</h3>
+      <p style="font-size:11px;color:#9b89a8;margin:0;">{{match_date}} · {{match_time}} h · {{stadium}}</p>
+    </div>
+
+    <!-- Ticket con borde punteado, estilo entrada real -->
+    <div style="margin:22px 32px 0;border:1px dashed #dbcfe4;border-radius:10px;">
+      <div style="display:flex;">
+        <div style="flex:1;padding:16px 18px;border-right:1px dashed #dbcfe4;">
+          <p style="font-size:8px;letter-spacing:1px;color:#b099bb;text-transform:uppercase;margin:0 0 6px;">Sector</p>
+          <p style="font-size:14px;font-weight:700;color:#6f507d;margin:0;">{{sector}}</p>
+        </div>
+        <div style="flex:1;padding:16px 18px;">
+          <p style="font-size:8px;letter-spacing:1px;color:#b099bb;text-transform:uppercase;margin:0 0 6px;">Asientos</p>
+          <p style="font-size:14px;font-weight:700;color:#6f507d;margin:0;">{{seats}}</p>
+        </div>
+      </div>
+      <div style="border-top:1px dashed #dbcfe4;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:9px;letter-spacing:1px;color:#b099bb;text-transform:uppercase;">Orden</span>
+        <span style="font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:#6f507d;letter-spacing:1px;">{{order_code}}</span>
+      </div>
+    </div>
+
+    <!-- Detalle de precio -->
+    <div style="padding:24px 32px 6px;">
+      <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #eeedf3;font-size:12px;">
+        <span style="color:#9b8aa7;">Cantidad de entradas</span>
+        <span style="color:#64516f;">{{quantity}}</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #eeedf3;font-size:12px;">
+        <span style="color:#9b8aa7;">Precio unitario</span>
+        <span style="color:#64516f;">{{unit_price}}</span>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:6px 32px 0;padding-top:18px;border-top:1px solid #eeedf3;">
+      <span style="font-size:9px;letter-spacing:1px;color:#aa93b4;text-transform:uppercase;">Total</span>
+      <strong style="font-size:24px;font-family:'Manrope',Arial,sans-serif;color:#6b4ce6;">{{total_price}}</strong>
+    </div>
+
+    <!-- Comprador -->
+    <div style="padding:22px 32px 30px;margin-top:16px;">
+      <p style="font-size:11px;color:#9a8ba5;line-height:1.7;margin:0;">
+        Comprador: <strong style="color:#64516f;font-weight:600;">{{to_name}}</strong> ({{to_email}})<br>
+        Guardá este correo como comprobante de tu compra.
+      </p>
+    </div>
+
+    <div style="padding:16px 32px;background:#fbfaff;border-top:1px solid #eeedf3;">
+      <p style="font-size:9px;color:#a19daa;letter-spacing:0.3px;margin:0;text-align:center;">Mundial Tickets · Compra simulada con fines educativos</p>
+    </div>
+
+  </div>
+</div>
