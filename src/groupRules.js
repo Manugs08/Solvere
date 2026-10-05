@@ -6,11 +6,14 @@ export function groupError(teams, groups, tournament, complete = false, previous
   const sizes = groups.map(g => teams.filter(t => t.group === g.name).length)
   if (teams.some(t => !groups.some(g => g.name === t.group))) return 'Elegí un grupo válido.'
   if (sizes.some(n => n > capacity)) return `El grupo está completo: admite como máximo ${capacity} selecciones.`
-  const imbalance = counts => counts.reduce((total, n) => total + counts.reduce((sum, other) => sum + Math.abs(n - other), 0), 0)
   const previousSizes = groups.map(g => previousTeams.filter(t => t.group === g.name).length)
-  const improving = imbalance(sizes) < imbalance(previousSizes)
-  const unchanged = teams.length === previousTeams.length && sizes.every((n, i) => n === previousSizes[i])
-  if (sizes.length && Math.max(...sizes) - Math.min(...sizes) > 1 && (complete || (!improving && !unchanged))) return 'Los grupos deben mantenerse equilibrados. Elegí uno con menos selecciones.'
+  const added = sizes.map((n, i) => n - previousSizes[i])
+  // Loading the least populated group must work even with several empty groups.
+  const fillsSmallest = added.filter(n => n > 0).length === 1 && added.every((n, i) => n <= 0 || (n === 1 && previousSizes[i] === Math.min(...previousSizes)))
+  const removesLargest = added.filter(n => n < 0).length === 1 && added.every((n, i) => n >= 0 || (n === -1 && previousSizes[i] === Math.max(...previousSizes)))
+  const unchanged = added.every(n => n === 0)
+  const balancing = (fillsSmallest && added.every(n => n >= 0)) || (removesLargest && added.every(n => n <= 0)) || (fillsSmallest && removesLargest)
+  if (sizes.length && Math.max(...sizes) - Math.min(...sizes) > 1 && (complete || (!balancing && !unchanged))) return 'Los grupos deben mantenerse equilibrados. Elegí uno con menos selecciones.'
   if (complete && (!sizes.length || sizes.some(n => n !== capacity))) return 'Completá todos los grupos con la misma cantidad de selecciones antes de programar partidos.'
   return ''
 }
