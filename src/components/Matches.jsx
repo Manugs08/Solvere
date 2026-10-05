@@ -17,6 +17,8 @@ export default function Matches({ data, matches, setMatches, admin, notify, onBu
   function schedule(e) {
     e.preventDefault(); const v = Object.fromEntries(new FormData(e.currentTarget))
     if (v.home === v.away) return setError('Elegí dos selecciones diferentes.')
+    const duplicate = matches.some(m => m.phase === v.phase && ((m.home === v.home && m.away === v.away) || (m.home === v.away && m.away === v.home)))
+    if (duplicate) return setError('Ya existe un partido entre estas selecciones en esta fase, aunque se inviertan local y visitante.')
     const ref = data.referees.find(r => r.name === v.referee)
     if (!ref || ref.available !== 'Disponible') return setError('El árbitro no está disponible.')
     const teams = data.teams.filter(t => [v.home, v.away].includes(t.id))
