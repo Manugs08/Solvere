@@ -85,7 +85,7 @@ function App() {
     }
     setAuth(null); navigate('overview'); notify('Sesión de demostración iniciada.')
   }
-  const manage = kind => <Management key={`${activeId}-${kind}`} activeTournamentId={activeId} onSelectTournament={selectTournament} kind={kind} data={data} setData={setData} matches={matches} setMatches={setMatches} admin={admin} notify={notify}/>
+  const manage = kind => <Management editions={tournamentState.editions} key={`${activeId}-${kind}`} activeTournamentId={activeId} onSelectTournament={selectTournament} kind={kind} data={data} setData={setData} matches={matches} setMatches={setMatches} admin={admin} notify={notify}/>
   function groupTable(compact = false) {
     const rows = standings(data.teams, matches, group)
     return <div className="table-scroll"><table className="standings"><thead><tr><th>#</th><th>Selección</th><th>PJ</th>{!compact && <><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th></>}<th>DG</th><th>PTS</th></tr></thead><tbody>{rows.map((t, i) => <tr key={t.id}><td><span className={i < 2 ? 'position qualified' : 'position'}>{i + 1}</span></td><td><span className="team-name"><Flag small team={t}/><strong>{t.name}</strong></span></td><td>{t.played}</td>{!compact && <><td>{t.won}</td><td>{t.drawn}</td><td>{t.lost}</td><td>{t.gf}</td><td>{t.ga}</td></>}<td>{t.gf - t.ga > 0 ? '+' : ''}{t.gf - t.ga}</td><td><strong>{t.points}</strong></td></tr>)}</tbody></table></div>
