@@ -123,7 +123,7 @@ function App() {
   let content
   if (protectedPage && !admin) content = <Empty title="Acceso de administrador" text="Esta sección está disponible en la vista de administrador FIFA."/>
   else if (page === 'overview') content = overview()
-  else if (page === 'matches') content = <Matches tournament={activeTournament} key={activeId} data={data} matches={matches} setMatches={setMatches} admin={admin} notify={notify} onBuy={buy} selected={selected} setSelected={setSelected}/>
+  else if (page === 'matches') content = <Matches tickets={tickets} tournament={activeTournament} key={activeId} data={data} matches={matches} setMatches={setMatches} admin={admin} notify={notify} onBuy={buy} selected={selected} setSelected={setSelected}/>
   else if (page === 'teams') content = <>{tabs([['teams', 'Selecciones'], ['players', 'Jugadores'], ['staff', 'Cuerpos técnicos']])}{manage(tab || 'teams')}</>
   else if (page === 'venues') content = <>{tabs([['stadiums', 'Estadios'], ['cities', 'Sedes y ciudades']])}{manage(tab || 'stadiums')}</>
   else if (page === 'tournament') content = <>{tabs([['tournaments', 'Ediciones'], ['phases', 'Fases'], ['groups', 'Grupos']])}{manage(tab || 'tournaments')}</>
