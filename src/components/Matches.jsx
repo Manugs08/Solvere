@@ -23,6 +23,7 @@ export default function Matches({ data, matches, setMatches, admin, notify, onBu
     if (matches.some(m => m.date === v.date && [m.home, m.away].some(id => id === v.home || id === v.away))) return setError('Una de las selecciones ya tiene un partido ese día. Elegí otra fecha, aunque el horario o la fase sean diferentes.')
     const ref = data.referees.find(r => r.name === v.referee)
     if (!ref || ref.available !== 'Disponible') return setError('El árbitro no está disponible.')
+    if (matches.some(m => m.date === v.date && m.referee === v.referee)) return setError('El árbitro ya tiene un partido asignado ese día. Elegí otro árbitro u otra fecha, aunque el horario sea diferente.')
     const teams = data.teams.filter(t => [v.home, v.away].includes(t.id))
     if (teams.some(t => t.name === ref.country)) return setError('El árbitro no puede tener la nacionalidad de una selección participante.')
     if (data.phases.find(p => p.name === v.phase)?.type === 'Grupos' && teams.some(t => t.group !== v.group)) return setError('Ambas selecciones deben pertenecer al grupo elegido.')
