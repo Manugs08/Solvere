@@ -274,7 +274,7 @@ export const initialData = {
 ],
   staff: [{ id: 'ct1', name: 'Martín Suárez', team: 'Argentina', position: 'Director técnico' }, { id: 'ct2', name: 'Diego Herrera', team: 'México', position: 'Director técnico' }],
   referees: [{ id: 'r1', name: 'Marco Rossi', country: 'Italia', history: 'Internacional · 8 años', available: 'Disponible' }, { id: 'r2', name: 'Clara Weber', country: 'Alemania', history: 'Internacional · 6 años', available: 'Disponible' }, { id: 'r3', name: 'Ana Pereira', country: 'Portugal', history: 'Internacional · 5 años', available: 'Disponible' }],
-  users: [{ id: 'u1', name: 'Manuel González', email: 'manuel@demo.test', role: 'Usuario registrado' }, { id: 'u2', name: 'Luciana Gómez', email: 'luciana@demo.test', role: 'Usuario registrado' }, { id: 'u3', name: 'Catalina Marquevich', email: 'admin@demo.test', role: 'Administrador FIFA' }, { id: 'u4', name: 'Catalina Marquevich', email: 'catalinamarquevich@gmail.com', role: 'Usuario registrado' }],
+  users: [{ id: 'u1', name: 'Manuel González', email: 'manuel@demo.test', role: 'Usuario registrado' }, { id: 'u2', name: 'Luciana Gómez', email: 'luciana@demo.test', role: 'Usuario registrado' }, { id: 'u3', name: 'Catalina Marquevich', email: 'admin@demo.test', role: 'Administrador FIFA' }, { id: 'u4', name: 'Catalina Marquevich', email: 'catalinamarquevich@gmail.com', role: 'Usuario registrado' }, { id: 'u5', name: 'Fernando Zagnoni', email: 'zagnonifer@ufasta.edu.ar', role: 'Usuario registrado' }],
 }
 export const initialMatches = [
   { id: 'm7', home: 'esp', away: 'ger', date: '2026-06-20', time: '18:00', stadium: 'Estadio Capital', phase: 'Fase de grupos', group: 'C', referee: 'Marco Rossi', status: 'Programado', stock: 40, score: [0, 0], events: [] },
